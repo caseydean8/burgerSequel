@@ -1,0 +1,29 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "application utilizing node, express, and handlebars",
+  "main": "server.js",
+  "scripts": {
+    "test": "start",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caseydean8/burger.git"
+  },
+  "author": "Casey Carroll",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caseydean8/burger/issues"
+  },
+  "homepage": "https://github.com/caseydean8/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1"
+  },
+  "engines": {
+    "node": "10.15.3"
+  }
+}
