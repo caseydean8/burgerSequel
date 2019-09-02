@@ -1,5 +1,13 @@
 // import orm (will '../config/orm' work)
-const orm = require('../config/orm.js')
+// const orm = require('../config/orm.js')
+
+// remake with sequelize
+
+// Sequelize references the standard library
+const Sequelize = require('sequelize')
+
+// sequelize references the connection to the database
+const sequelize = ('../config/connection.js')
 
 const burger = {
     selectAll: function(a) {
@@ -9,7 +17,7 @@ const burger = {
         })
     },
 
-    insertOne: function(columns,values, a) {
+    insertOne: function(columns, values, a) {
         console.log('burger model contact')
         orm.insertOne('burgers', columns, values, function(res) {
             a(res)
