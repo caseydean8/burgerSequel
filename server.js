@@ -20,12 +20,11 @@ const ehb = require('express-handlebars')
 app.engine('handlebars', ehb({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
-// Static directory
-app.use(express.static("public"));
+const routes = require('./controllers/burgers_controller')
 
-require("./routes/api-routes.js")(app)
+app.use(routes)
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
     app.listen(PORT, () => console.log(`server.js started, App listening on PORT ${PORT}`));
 }).catch((err) => console.log(err))
 
