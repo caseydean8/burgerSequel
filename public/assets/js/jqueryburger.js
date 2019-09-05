@@ -2,16 +2,12 @@ $(function() {
     $(".devoured").on("click", function(event) {
         console.log("eat it!")
         var id = $(this).data("id");
-        var devoured = $(this).data("isDevoured");
-
-        var nowDevoured = {
-            devoured: true
-        };
-
-        // Send the PUT request.
-        $.ajax("/api/burgers/" + id, {
-            type: "PUT",
-            // data: nowDevoured
+        const queryURL = "/update"
+            // Send the PUT request.
+        $.ajax({
+            type: 'POST',
+            url: queryURL,
+            data: { id: id }
         }).then(
             function() {
                 console.log("changed devoured ");
@@ -25,8 +21,9 @@ $(function() {
         var id = $(this).data("id");
 
         // Send the DELETE request.
-        $.ajax("/api/burgers/" + id, {
-            type: "DELETE"
+        $.ajax({
+            method: "DELETE",
+            url: "/api/burgers/" + id
         }).then(
             function() {
                 console.log("deleted burger", id);
