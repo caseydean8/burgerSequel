@@ -3,9 +3,6 @@ const express = require('express')
 const router = express.Router()
 console.log('router started')
 
-// const path = require('path')
-
-
 // import from model, may need file name
 const db = require('../models')
 
@@ -24,27 +21,23 @@ router.post('/api/burgers', (req, res) => {
     db.burgers.create(req.body).then(response => res.redirect('/'))
 })
 
-router.post("/update", (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
     console.log("put controller contact")
     console.log(req.body)
+    console.log(req.params)
 
     db.burgers.update({
         devoured: true
     }, {
-        where: { id: req.body.id }
-    }).then((response) => {
-        console.log(response.affectedRows + " rows updated in the database.")
-        res.redirect('/')
-    })
+        where: { id: req.params.id }
+    }).then((burgPut) => res.json(burgPut)).catch(err => console.log(err))
 });
 
 router.delete("/api/burgers/:id", function(req, res) {
-    console.log("delete contact")
+    console.log("delete router contact")
 
     db.burgers.destroy({
-        where: {
-            id: req.params.id
-        }
+        where: { id: req.params.id }
     }).then((burgDelete) => res.json(burgDelete)).catch((err) => console.log(err))
 
 });

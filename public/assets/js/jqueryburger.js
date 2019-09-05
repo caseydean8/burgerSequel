@@ -2,12 +2,10 @@ $(function() {
     $(".devoured").on("click", function(event) {
         console.log("eat it!")
         var id = $(this).data("id");
-        const queryURL = "/update"
-            // Send the PUT request.
+        // Send the PUT request.
         $.ajax({
-            type: 'POST',
-            url: queryURL,
-            data: { id: id }
+            type: 'PUT',
+            url: "/api/burgers/" + id
         }).then(
             function() {
                 console.log("changed devoured ");
