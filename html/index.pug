@@ -1,0 +1,53 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        | &#x9;
+        title burger app
+        | &#x9;
+        meta(name='description', content='')
+        | &#x9;
+        meta(name='author', content='')
+        //
+        
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        //
+        
+        link(href='//fonts.googleapis.com/css?family=Raleway:400,300,600', rel='stylesheet', type='text/css')
+        //
+        
+        link(rel='stylesheet', href='/public/assets/css/normalize.css')
+        | &#x9;
+        link(rel='stylesheet', href='/public/assets/css/skeleton.css')
+        //
+        
+        link(rel='icon', type='image/png', href='images/favicon.png')
+        | &#x9;
+        script(src='https://code.jquery.com/jquery.js')
+        | &#x9;
+        script(src='/public/assets/js/jqueryburger.js')
+    body    
+        .container
+            .row(style='margin-top: 10%')
+                h1 Burgers!
+                |   
+                img(src='/public/assets/img/burger.jpg', alt='cheeseburger')
+                
+            .row
+                .one-half.column
+                    h5 is it yummy?
+                    ul
+                        //each {burgers}
+                        //unless {devoured}
+                        li
+                            //#{this.burger_name}
+                            button.devoured(data-id="{id}" data-isdevoured="{{devoured}}") eat it!
+
+                .one-half.column    
+                    h5 eaten
+                    ul
+                        //each {burgers}
+                        //if {devoured}
+                        li
+                            //#{this.burger_name}
+                            button.delete-burger(data-id="{{this.id}}") delete
