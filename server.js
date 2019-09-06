@@ -27,11 +27,3 @@ app.use(routes)
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => console.log(`server.js started, App listening on PORT ${PORT}`));
 }).catch((err) => console.log(err))
-
-// app.listen(PORT, function() {
-//     console.log(`server listening on http:/localhost: ${PORT}`)
-// })
-
-// const orm = require('./config/orm')
-
-// orm.selectAll('burgers')

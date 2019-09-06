@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 console.log('router started')
 
-// import from model, may need file name
+// import from model
 const db = require('../models')
 
 router.get('/', (req, res) => {
@@ -16,15 +16,13 @@ router.get('/', (req, res) => {
 })
 
 router.post('/api/burgers', (req, res) => {
-    console.log("route ? with POST method")
+    console.log("route api/burgers with POST method")
 
     db.burgers.create(req.body).then(response => res.redirect('/'))
 })
 
-router.put("/api/burgers/:id", (req, res) => {
-    console.log("put controller contact")
-    console.log(req.body)
-    console.log(req.params)
+router.put('/api/burgers/:id', (req, res) => {
+    console.log("route 'api/burgers/:id' with PUT method");
 
     db.burgers.update({
         devoured: true
@@ -33,8 +31,8 @@ router.put("/api/burgers/:id", (req, res) => {
     }).then((burgPut) => res.json(burgPut)).catch(err => console.log(err))
 });
 
-router.delete("/api/burgers/:id", function(req, res) {
-    console.log("delete router contact")
+router.delete('/api/burgers/:id', (req, res) => {
+    console.log("route 'api/burgers/:id' with DELETE method")
 
     db.burgers.destroy({
         where: { id: req.params.id }
