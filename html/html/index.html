@@ -26,12 +26,10 @@
         <div class="one-half column">
           <h5>is it yummy?</h5>
           <ul>
-            <!--each {burgers}-->
-            <!--unless {devoured}-->
-            <li>
-              <!--#{this.burger_name}-->
-              <button class="devoured" data-id="{id}" data-isdevoured="{{devoured}}">eat it!</button>
-            </li>
+            <select>
+              <li>[object Object]</li>
+              <button class="devoured" data-id="{id}" data-isdevoured="{devoured}">eat it!</button>
+            </select>
           </ul>
         </div>
         <div class="one-half column">   
@@ -46,6 +44,14 @@
           </ul>
         </div>
       </div>
+      <h2>Add a Burger</h2>
+      <form class="create-form" action="/api/burgers" method="POST">
+        <div class="form-group">
+          <label>Burger Name:</label>
+          <input type="text" name="burger_name">
+        </div>
+        <button type="submit">Add Burger</button>
+      </form>
     </div>
   </body>
 </html>
