@@ -36,13 +36,11 @@ html
             .row
                 .one-half.column
                     h5 is it yummy?
-                    ul
-                        //select
-                            each burger, i in {burgers}
-                                unless {devoured}
-                        li
-                            
-                            button.devoured(data-id="{id}" data-isdevoured="{devoured}") eat it!
+                    ul #{handlebarsObj}
+                        each burger, i in burgers
+                            li= burger.burger_name
+                        
+                                button.devoured(data-id="{id}" data-isdevoured="{devoured}") eat it!
 
                 .one-half.column    
                     h5 eaten

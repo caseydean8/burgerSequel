@@ -10,7 +10,9 @@ router.get('/', (req, res) => {
     console.log("route '/' using GET method")
 
     db.burgers.findAll({}).then(data => {
+        // console.log(data)
         let handlebarsObj = { burgers: data };
+        console.log(handlebarsObj)
         res.render('index', handlebarsObj)
     })
 })
@@ -19,6 +21,7 @@ router.post('/api/burgers', (req, res) => {
     console.log("route api/burgers with POST method")
 
     db.burgers.create(req.body).then(response => res.redirect('/'))
+    console.log(req.body)
 })
 
 router.put('/api/burgers/:id', (req, res) => {
