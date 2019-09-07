@@ -10,6 +10,6 @@ module.exports = (sequelize, data) => {
             defaultValue: false
         }
     });
-    console.log(`model burger.js hit`);
+    console.log(`/models/burger.js hit`);
     return burgers;
 };
