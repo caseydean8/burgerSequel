@@ -40,14 +40,14 @@ html
                         for burger, i in burgers
                             if !burger.devoured                                             
                                 li= burger.burger_name
-                                    button.devoured(data-id="#{burger.id}" data-isdevoured="#{burger.devoured}") eat it!
+                                    button.devoured(data-id=burger.id data-isdevoured=burger.devoured) eat it!
                 .one-half.column    
                     h5 eaten
                     ul #{handlebarsObj}
                         for burger in burgers
                             if burger.devoured
                                 li= burger.burger_name
-                                    button.delete-burger(data-id="{{this.id}}") delete
+                                    button.delete-burger(data-id=burger.id) delete
 
             h2 Add a Burger
             form(class="create-form" action="/api/burgers" method="POST")
