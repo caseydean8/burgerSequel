@@ -1,4 +1,4 @@
-# burger
+# Sequelize Pug Burger
 
 Burger is an application using the MVC design pattern
 
