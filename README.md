@@ -12,7 +12,7 @@ This project is built with
 * Node.js
 * Express framework for routing
 * Pug template engine to render html
-* Sequlize for database management
+* Sequelize for database management
 
 
 node dependencies include
