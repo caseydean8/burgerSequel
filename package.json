@@ -19,7 +19,7 @@
   "homepage": "https://github.com/caseydean8/burger#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
+    "express-handlebars": "^5.3.1",
     "mysql": "^2.17.1",
     "mysql2": "^1.7.0",
     "nodemon": "^1.19.1",
